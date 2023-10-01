@@ -1,0 +1,386 @@
+body{
+  font-family: Georgia, serif;
+  color: #333;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1.125;
+}
+.contained{
+  margin: 0 auto;
+  width: 90%;
+  @media (min-width: 500px){
+    width: 80%;
+  }
+  @media (min-width: 600px){
+    width: 60%;
+  }
+}
+
+.sub_title {
+  color: #333;
+  text-shadow:
+  0 1px #bbb,
+  1px 2px #bbb,
+  2px 3px #bbb,
+  3px 4px #bbb,
+  4px 5px #bbb,
+  5px 10px 8px #000000;
+  font-size: 40px;
+  opacity: 0.7;
+}
+
+/* 携帯で見るときに大事じゃない大事じゃない文字を小さくする*/
+@media screen and (max-width: 768px) {
+  .run_time .other {
+    font-size: 12px;
+  }
+
+  .question .other {
+    font-size: 12px;
+  }
+
+  .sub_title{
+    font-size: 30px;
+  }
+}
+
+
+/* --- Important Pen Styles --- */
+header{
+  overflow: hidden;
+  padding-bottom: 55%;
+  @media (min-width: 600px){
+    padding-bottom: 50%;
+  }
+  @media (min-width: 700px){
+    padding-bottom: 45%;
+  }
+}
+
+header img{
+  width: 100%;
+  max-width: none;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 
+引用 
+*/
+.headerNavOuter > a {
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+}
+
+/*
+----------------------
+Start ハンバーガーメニュー
+----------------------
+*/
+/* Start ナビゲーション */
+.headerNav {
+  position: fixed;
+  right: -250px;/*右側に隠しておきます*/
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  padding-top: 40px;
+  background-color: rgba(163, 164, 170, 0.8);
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  z-index: 20;
+  overflow-y: auto;
+}
+.navList {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: block;
+}
+.navItem {
+  padding: 1rem 1rem 0;
+}
+.navItem a {
+  display: block;
+  border-bottom: 1px solid #eee;
+  color: #282727;/*.文字の色*/
+  padding: 4rem 0 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+/* End ナビゲーション */
+
+/* Start ハンバーガーボタン(三本線の実装) */
+.hamburger_btn {
+  position: absolute;/*.headerNavOuterを基準にして、絶対配置*/
+  right: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  z-index: 30;
+}
+.hamburger_line {
+  position: absolute;/*.headerNavOuterを基準にして、絶対配置*/
+  left: 8px;
+  width: 25px;
+  height: 1px;
+  background-color: #fff;/*.線の色を変える*/
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+.hamburger_line_1 {
+  top: 20px;
+}
+.hamburger_line_2 {
+  top: 26px;
+}
+.hamburger_line_3 {
+  top: 32px;
+}
+/* End ハンバーガーボタン(三本線の実装) */
+
+/*ハンバーガーメニュをクリックした後に現れる半透明の背景*/
+.black-bg {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;/* 非表示にしておきます */
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  cursor: pointer;
+}
+
+/* Start ハンバーガーボタンをクリックした際の動き */
+/* ナビゲーションが現れる */
+.nav-open .headerNav {
+  right: 0;
+}
+
+/* 半透明の背景を表示させます。 */
+.nav-open .black-bg {
+  opacity: .8;
+  visibility: visible;
+}
+
+/* 三本線のハンバーガーを、バッテンにします */
+.nav-open .hamburger_line_1 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 25px;
+}
+.nav-open .hamburger_line_2 {
+  width: 0;
+  left: 50%;
+}
+
+.nav-open .hamburger_line_3 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 25px;
+}
+/* End ハンバーガーボタンをクリックした際の動き */
+/*
+----------------------
+End ハンバーガーメニュー
+----------------------
+
+*/
+/* 
+main
+*/
+main{
+  padding: 1em 0;
+  position: relative;
+  background: #f5f5f5;
+  box-shadow: 0px -10px 60px rgba(0,0,0,0.25);
+}
+/* 
+About
+*/
+.about > p{
+  font-size: 15px;
+}
+
+.Menu_one{
+  width: 56.5%;
+  height: 56.5%;
+  filter: drop-shadow(2px 2px 2px rgba(160, 160, 160, 0.8));
+}
+
+.Menu_two{
+  width: 60%;
+  height: 60%;
+  filter: drop-shadow(2px 2px 2px rgba(160, 160, 160, 0.8));
+}
+
+.Menu_img{
+  display: flex;
+}
+
+.img_one > img{
+  width: 100%;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px #aaa);
+}
+
+.img_two > img{
+  width: 100%;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px #aaa);
+}
+
+@media screen and (max-width: 768px) {
+  .img_one{
+    text-align: center;
+  }
+
+  .img_one > img{
+    width: 80%;
+  }
+
+  .img_two{
+    text-align: center;
+  }
+
+  .img_two > img{
+    width: 80%;
+  }
+
+  .Menu_img{
+    text-align: center;
+    display: block;
+  }
+
+  .Menu_img > img{
+    width: 90%;
+  }
+}
+
+.question p{
+  text-align: center;
+}
+
+.question p a {
+  color: #333;
+}
+
+.run_time{
+  text-align: center;
+}
+
+/* 
+access
+*/
+.access{
+  width: 100%;
+}
+
+.footer-map {
+  width: 100%;
+  margin: 0;
+  padding: 15px 15px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.footer-map > iframe {
+  width: 60%;
+}
+.footer-mapinfo {
+  width: 100%;
+  padding: 15px;
+}
+.footer-maplogo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.footer-mapaddress {
+  font-style: normal;
+}
+.footer-mapaddress > a {
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-map{
+    display: contents;
+  }
+  .footer-mapinfo{
+    width: 100%;
+  }
+
+  .access > figure > iframe{
+    width: 100%;
+  }
+
+  .footer-maplogo{
+    text-align: center;
+  }
+
+  .footer-mapaddress{
+    text-align: center;
+  }
+
+}
+
+/* 
+footer
+*/
+.footer {
+  /* background-color: #333; */
+  color: #333;
+}
+
+.footer-line {
+  border-color: #333;
+}
+
+.footer-copy {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.footer-time {
+  text-align: center;
+}
+
+.footer ul {
+  display: flex;
+  margin-top: 20px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer ul li {
+  align-items: center;
+  text-align: center; 
+}
+  
+.footer ul li a img {
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
